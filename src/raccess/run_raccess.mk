@@ -1,0 +1,9 @@
+SRCS_RACCESS__RACCESS   = ${SRCS0} run_raccess.cpp
+OBJS_RACCESS__RACCESS   = ${SRCS_RACCESS__RACCESS:.cpp=.o}
+OBJS_RACCESS__RACCESS_D = ${SRCS_RACCESS__RACCESS:.cpp=.o_D}
+run_raccess: $(OBJS_RACCESS__RACCESS)
+	$(CC) $(CFLAGS) $(INCLUDES) -o $@ $^ $(LIBS)
+run_raccess_D: $(OBJS_RACCESS__RACCESS_D)
+	$(CC) $(CFLAGS_D) $(INCLUDES) -o $@ $^ $(LIBS_D)
+EXES_ALL += run_raccess
+SRCS_ALL += $(SRCS_RACCESS__RACCESS)

@@ -1,0 +1,21 @@
+/*
+ * author: hisanori kiryu
+ */
+// #ifndef UTIL__DEF_MAIN_FUNC_HPP
+// #define UTIL__DEF_MAIN_FUNC_HPP
+#define opt_elem(name, type, value, desc) attr_accessor(type, name)
+  opt_set()
+#undef opt_elem
+  static int main(int argc, char** argv, Self& obj) {
+#define opt_elem(name, type, value, desc) set_##name(stot(type(), value); \
+    { os << ("  -"#name"=<"#type": "value">\t"desc"\n");};
+    ostringstream os("opt_set: -name=<type: default>\tdescription\n"); opt_set();
+#undef opt_elem
+#define opt_elem(name, type, value, desc) \
+    if (i.name() == #name) { obj.set_##name(stot(type(), i.value())); continue;};
+    for (OptIter i = OptIter(argc, argv); i != OptIter(); ++i)
+      { opt_set(); Die("unknown option: -", i.name(), "=", i.value());}
+    if (help()) { cout << os.str();} else { obj.run();}; return 0;}
+#undef opt_elem
+#undef opt_set
+// #endif
