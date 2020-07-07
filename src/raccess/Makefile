@@ -9,11 +9,11 @@ SRC_DIR   = ../
 INCLUDES = -I$(SRC_DIR)
 
  # CFLAGS = -O3 -Wall -finline-limit=$(BIG_INLINE_LIMIT) $(CFLAGS1)
-CFLAGS = -O3 -g -Wall $(CFLAGS1)
+CFLAGS = -O3 -g -Wall -std=c++03 $(CFLAGS1)
 # CFLAGS = -O2 -Wall $(CFLAGS1)
 
 LIBS     = -lz
-CFLAGS_D = -O0 -g3 -pg -Wall -DDEBUG                         \
+CFLAGS_D = -O0 -g3 -pg -Wall -std=c++03 -DDEBUG              \
 	   -fkeep-inline-functions -fkeep-static-consts      \
 	   -finline-limit=0 -fno-default-inline $(CFLAGS1)
 LIBS_D = -lz

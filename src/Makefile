@@ -6,9 +6,9 @@ SRC_DIR      = ./
 SUB_DIRS     = util raccess
 
 INCLUDES     = -I$(SRC_DIR)
-CFLAGS       = -O3 -g3 -pg -Wall $(CFLAGS1)
+CFLAGS       = -O3 -g3 -pg -Wall -std=c++03 $(CFLAGS1)
 LIBS         = # -lz
-CFLAGS_D     = -O0 -g3 -pg -Wall -DDEBUG -fkeep-inline-functions -fkeep-static-consts  \
+CFLAGS_D     = -O0 -g3 -pg -Wall -std=c++03 -DDEBUG -fkeep-inline-functions -fkeep-static-consts  \
 	       -finline-limit=0 -fno-default-inline $(CFLAGS1)
 LIBS_D       = # -lz
 
